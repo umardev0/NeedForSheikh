@@ -27,7 +27,7 @@ public class AdMobHandler {
 	}
 
 	// Use this for initialization
-	public static void initialize (string banner_id,string interstatial_id) 
+	public static void initialize (string banner_id,string interstatial_id)
 	{
 
 		ad_mob_banner_id = banner_id;
@@ -39,7 +39,7 @@ public class AdMobHandler {
 		m_isInitialize = true;
 		if(ad_mob_banner_id != "")
 		{
-			getInstance().bannerView = new BannerView(ad_mob_banner_id, 
+			getInstance().bannerView = new BannerView(ad_mob_banner_id,
 				AdSize.Banner, AdPosition.Bottom);
 
 			AdRequest bannerRequest = new AdRequest.Builder().Build();
@@ -56,33 +56,33 @@ public class AdMobHandler {
 
 	public static bool isInterstatialCached() {
 		if (getInstance().interstitial.IsLoaded()) {
-			Debug.Log("Arslan::Admob::isCached: true");
+			Debug.Log("Umar::Admob::isCached: true");
 			return true;
 		}
-		Debug.Log("Arslan::Admob::isCached: false");
+		Debug.Log("Umar::Admob::isCached: false");
 		cacheAd ();
 		return false;
 	}
 
 	public static bool showAdmobInterstatial() {
 		if (isInterstatialCached ()) {
-			Debug.Log("Arslan::Admob::showInterstatialAd: true");
+			Debug.Log("Umar::Admob::showInterstatialAd: true");
 			getInstance().interstitial.Show();
 			cacheAd();
 			return true;
 		}
-		Debug.Log("Arslan::Admob::showInterstatialAd: false");
+		Debug.Log("Umar::Admob::showInterstatialAd: false");
 		return false;
 	}
 
 	public static bool showAdmobBanner() {
-		Debug.Log("Arslan::Admob::showAdmobBanner: true");
+		Debug.Log("Umar::Admob::showAdmobBanner: true");
 		getInstance().bannerView.Show();
 		return true;
 	}
 
 	public static bool hideAdmobBanner() {
-		Debug.Log("Arslan::Admob::hideAdmobBanner: true");
+		Debug.Log("Umar::Admob::hideAdmobBanner: true");
 		getInstance().bannerView.Hide();
 		return true;
 	}
@@ -93,6 +93,6 @@ public class AdMobHandler {
 		AdRequest interstitialRequest = new AdRequest.Builder().Build();
 		getInstance().interstitial.LoadAd(interstitialRequest);
 	}
-	
+
 
 }
